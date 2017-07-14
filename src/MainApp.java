@@ -1,5 +1,3 @@
-package com.tutorial;
-
 import com.tutorial.impl.BraveKnight;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
