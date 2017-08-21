@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans.xsd
+http://www.springframework.org/schema/context
+http://www.springframework.org/schema/context/spring-context.xsd">
+
+<bean id="sonyRobot" class="robot.model.Robot">
+    <constructor-arg index="0" ref="sonyHand"/>
+    <constructor-arg index="1" ref="sonyBody"/>
+    <constructor-arg index="2" ref="sonyVoice"/>
+</bean>
+
+    <bean id="sonyBody" class="robot.interfaces.impl.SonyBody"/>
+    <bean id="sonyHand" class="robot.interfaces.impl.SonyHand"/>
+    <bean id="sonyVoice" class="robot.interfaces.impl.SonyVoice"/>
+    <bean id="toshibaHand" class="robot.interfaces.impl.ToshibaHand"/>
+</beans>
