@@ -1,13 +1,17 @@
 package robot;
 
-import robot.model.Robot;
-import org.springframework.context.ApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
+import city.CityService;
+import city.model.City;
+import city.sessionbean.CitySessionBean;
 
 public class Main {
     public static void main(String[] args) {
-        ApplicationContext context = new ClassPathXmlApplicationContext("robot/bean.xml");
-        Robot sonyRobot = (Robot) context.getBean("sonyRobot");
-        sonyRobot.getHand().turnLeft();
+        CitySessionBean sessionBean = new CitySessionBean();
+
+        CityService service = sessionBean.cityService();
+
+        for (City city : service.getAll()) {
+            System.out.println(city);
+        }
     }
 }
